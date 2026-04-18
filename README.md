@@ -1,5 +1,7 @@
 # java-core-oop
 
+---
+
 ## Overview
 This repository contains 15 exercises ranging from basic to advanced levels.
 The core mission is to:
