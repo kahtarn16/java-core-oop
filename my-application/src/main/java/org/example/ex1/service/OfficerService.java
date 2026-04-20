@@ -1,11 +1,10 @@
 package org.example.ex1.service;
 
+import org.example.ex1.model.Engineer;
 import org.example.ex1.model.Officer;
 import org.example.ex1.repository.OfficerRepository;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 
 public class OfficerService {
@@ -16,6 +15,20 @@ public class OfficerService {
     }
 
     public void addOfficer(Officer officer) {
+        if(officer.getAge() < 18 || officer.getAge() > 60) {
+            throw new RuntimeException("Age must be between 18 and 60");
+        }
+
+        if(officer instanceof Engineer e) {
+            if(e.getLevel() < 1 || e.getLevel() > 10) {
+                throw new RuntimeException("Level must be between 1 and 10");
+            }
+        }
+
+        if(officer == null) {
+            throw new RuntimeException("Officer data can not null");
+        }
+
         repository.add(officer);
     }
 
@@ -26,7 +39,6 @@ public class OfficerService {
     public Officer findById(Integer id) {
         return repository.findById(id)
                 .orElseThrow(() -> new RuntimeException("The officer with ID: " + id + " is not found"));
-
     }
 
     public void deleteById(Integer id) {

@@ -10,6 +10,10 @@ public abstract class RepositoryImpl<T extends IEntity<ID>, ID> implements Repos
     @Override
     public void add(T entity) {
         if(entity == null) {
+            throw new RuntimeException("Can not add null entity");
+        }
+
+        if(entity.getId() == null) {
             entity.setId(generateNextId());
         }
         items.add(entity);
