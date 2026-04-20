@@ -31,9 +31,9 @@ The core mission is to:
 **Key Requirements:**
 1. **Model Design:** Implement `Worker`, `Engineer`, and `Staff` classes inheriting from a base `Officer` class.
 2. **Management Logic (QLCB):** Build a system to:
-* - Add new officers.
-* - Search by name.
-* - Display the list of all officers.
-* - Exit the program
+- Add new officers.
+- Search by name.
+- Display the list of all officers.
+- Exit the program
 
 ### Exercices 2: Coming soon
